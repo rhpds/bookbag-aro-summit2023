@@ -243,17 +243,6 @@ In this part we will create a Key Vault location to store the connection string 
 export KEYVAULT_NAME=secret-store-${GUID}
 ----
 
-////
-. To simplify the process for this lab, a script is provided that will do the prerequisite work in order to use Key Vault stored secrets. If you are curious, please feel free to read the script, otherwise just run it. This should take about 1-2 minutes to complete.
-+
-[source,sh,role=execute]
-----
-curl -s https://raw.githubusercontent.com/microsoft/aroworkshop/master/resources/setup-csi.sh | bash
-----
-+
-Or, if you'd rather not live on the edge, feel free to download it first.
-////
-
 . Create an Azure Key Vault.
 +
 [source,sh,role=execute]
