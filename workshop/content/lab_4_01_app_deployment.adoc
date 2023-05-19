@@ -65,13 +65,13 @@ https://github.com/microsoft/aroworkshop/blob/master/yaml/ostoy-microservice-dep
 
 The microservice serves internal web requests and returns a JSON object containing the current hostname and a randomly generated color string.
 
-. In your terminal deploy the microservice using the following command:
-+
+In your terminal deploy the microservice using the following command:
+
 [source,sh,role=execute]
 ----
 oc apply -f https://raw.githubusercontent.com/microsoft/aroworkshop/master/yaml/ostoy-microservice-deployment.yaml
 ----
-+
+
 .Sample Output
 [source,text,options=nowrap]
 ----
@@ -91,13 +91,13 @@ This deployment contains the node.js frontend for our application along with a f
 * Configmaps
 * Secrets
 
-. Deploy the frontend along with creating all objects mentioned above by entering:
-+
+Deploy the frontend along with creating all objects mentioned above by entering:
+
 [source,sh,role=execute]
 ----
 oc apply -f https://raw.githubusercontent.com/microsoft/aroworkshop/master/yaml/ostoy-frontend-deployment.yaml
 ----
-+
+
 .Sample Output
 [source,text,options=nowrap]
 ----
@@ -126,7 +126,22 @@ NAME          HOST/PORT                                          PATH   SERVICES
 ostoy-route   ostoy-route-ostoy.apps.asbogcsy.eastus.aroapp.io          ostoy-frontend-svc   <all>                 None
 ----
 
-. Copy `ostoy-route-ostoy.apps.asbogcsy.eastus.aroapp.io` above and paste it into your browser and press enter. Ensure that it is *http://* and not *https://*.
+. Copy the value for "HOST/PORT" as seen in the output from the previous command (e.g.,`ostoy-route-ostoy.apps.asbogcsy.eastus.aroapp.io` above) and paste it into your browser and press enter. Ensure that it is *http://* and not *https://*.
 You should see the homepage of our application.
 +
 image::media/managedlab/10-ostoy-homepage.png[Home Page]
+
+. You can see the status of the deployments by running:
++
+[source,sh,role=execute]
+----
+oc get deployments
+----
++
+.Sample Output
+[source,text,options=nowrap]
+----
+NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
+ostoy-frontend       1/1     1            1           4m46s
+ostoy-microservice   1/1     1            1           2m31s
+----

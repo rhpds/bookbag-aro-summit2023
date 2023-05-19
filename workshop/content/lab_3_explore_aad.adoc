@@ -1,13 +1,10 @@
 == Accessing the Azure Portal and OpenShift authentication using AAD
 
-In your environment an Azure Active Directory has been configured with two users:
-
-* Admin user: `%openenv_admin_upn%`. This user has administrative access to the Azure Portal as well as cluster-admin authorization on the ARO cluster.
-* Regular user:  `%openenv_user_upn%`. This user only has user level permissions with no useful access to the Azure portal or ARO cluster.
+In your environment Azure Active Directory has been configured with an Admin user: `%openenv_admin_upn%`. This user has administrative access to the Azure Portal as well as cluster-admin authorization on the ARO cluster.
 
 [NOTE]
 ====
-Both users have been assigned the temporary password `%bastion_password%`. You *must* change this password when you first log into the Azure portal.
+It has been assigned the temporary password `%bastion_password%`. You *must* change this password when you first log into the Azure portal.
 ====
 
 === Azure Portal and change admin password
@@ -24,13 +21,11 @@ Both users have been assigned the temporary password `%bastion_password%`. You *
 You will see your cluster `aro-cluster-%guid%`.
 
 . Click on your cluster to open the cluster properties.
-. Click on *Settings* -> *Properties* to bring up the cluster overview.
+. Click on *Settings* -> *Properties* in the left menu to bring up the cluster overview.
 
 == Log into OpenShift using Azure Credentials (Optional)
 
 WARNING: This section is optional and is not necessary to complete this lab.
-
-CAUTION: After this section make sure to log in as an administrator to complete the rest of this lab.
 
 Now that your password has been changed for the Azure admin account you can use single sign on to log into your OpenShift cluster.
 
@@ -65,5 +60,3 @@ openenv-admin-%guid%@azure.opentlc.com
 ----
 
 You now have full admin access to both the Azure console and the OpenShift console.
-
-CAUTION: Remember to log in as an administrator to complete the rest of the lab if you chose to log in as the regular user.

@@ -22,7 +22,7 @@ The password for the user `azure` is `%bastion_password%`
 
 You will be using the `az` and `oc` command line tools throughout this lab.
 
-. Verify that the `az` command line tool is installed:
+. Verify that the `az` command line tool is installed.
 +
 [source,sh,role=execute]
 ----
@@ -40,19 +40,18 @@ az version
 }
 ----
 
-. Download and install the `helm` binary:
+. Verify that `oc` is installed.
 +
 [source,sh,role=execute]
 ----
-cd $HOME
-
-wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/helm/latest/helm-linux-amd64
-
-sudo mv helm-linux-amd64 /usr/bin/helm
-
-sudo chown root:root /usr/bin/helm
-
-sudo chmod 775 /usr/bin/helm
+oc version
+----
++
+.Sample Output
+[source,texinfo]
+----
+Client Version: 4.11.26
+Kustomize Version: v4.5.4
 ----
 
 === Connect our cluster to Azure Arc.

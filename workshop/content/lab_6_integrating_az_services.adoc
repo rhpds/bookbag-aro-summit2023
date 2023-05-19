@@ -134,7 +134,7 @@ azureserviceoperator-controller-manager-6c667599f6-pql98   2/2     Running   1 (
 Now we need to create a Storage Account for our Blob Storage, to use with OSToy.
 We could create this using the CLI or the Azure Portal, but wouldn't it be nice if we could do so using standard Kubernetes objects? We could have defined the all these resources in once place (like in the deployment manifest), but for the purpose of gaining experience we will create each resource separately below.
 
-. Create a NEW project namespace for this lab.
+. Create a NEW project namespace for this lab by running:
 +
 [source,sh,role=execute]
 ----
