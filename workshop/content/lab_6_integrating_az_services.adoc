@@ -57,7 +57,7 @@ export AZURE_SUBSCRIPTION_ID=%azure_subscription_id%
 export AZURE_TENANT_ID=%azure_tenant%
 export SERVICE_PRINCIPAL_CLIENT_ID=%azappid%
 export SERVICE_PRINCIPAL_CLIENT_SECRET=%azpass%
-export REGION=eastus
+export REGION=$(az group show --name <resource-group-name> --query 'location' -o tsv)
 export RESOURCE_GROUP=openenv-${GUID}
 export PROJECT_NAME=ostoy-${GUID}
 ----
