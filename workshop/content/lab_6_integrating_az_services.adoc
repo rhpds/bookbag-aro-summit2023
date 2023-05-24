@@ -142,6 +142,7 @@ oc new-project ${PROJECT_NAME}
 ----
 
 . Create a ResourceGroup object in our project.
+This ResourceGroup is only an in-OpenShift representation of the ResourceGroup that was created by the ARO installer.  However, once created, it has control over the ResourceGroup that contains your ARO cluster.
 +
 [source,sh,role=execute]
 ----
