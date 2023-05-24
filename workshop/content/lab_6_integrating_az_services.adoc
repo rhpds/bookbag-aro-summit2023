@@ -155,6 +155,13 @@ spec:
   location: ${REGION}
 EOF
 ----
++
+[WARNING]
+====
+*DO NOT DELETE THIS RESOURCE GROUP, EVER.*
+If you delete this resource group, it will delete your ARO cluster.
+If you delete this you will need to go to https://summit.demo.redhat.com/ and request a new environment and start this lab again.
+====
 
 . Create a Storage Account.
 +
